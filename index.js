@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const userRouter = require("./userRouter.js");
 
 dotenv.config();
+app.use(express.json());
 
 mongoose
     .connect(process.env.MONGO_CONNECTION_URL)
