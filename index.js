@@ -3,9 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const userRouter = require("./userRouter.js");
+const morgan = require("morgan");
 
 dotenv.config();
 app.use(express.json());
+app.use(morgan("dev"));
 
 mongoose
     .connect(process.env.MONGO_CONNECTION_URL)
